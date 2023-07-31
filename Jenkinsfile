@@ -21,13 +21,13 @@ pipeline {
         stage('tomcat') {
             steps {
                 // Run Maven on a Unix agent.
-                bat "/opt/apache-maven/bin/mvn -f javaapp/pom.xml clean tomcat7:deploy"
+                sh "/opt/apache-maven/bin/mvn -f javaapp/pom.xml clean tomcat7:deploy"
             }
         }
         stage('docker') {
             steps {
                 // Run Maven on a Unix agent.
-                bat "echo building docker images"
+                sh "echo building docker images"
 
             }
         }
