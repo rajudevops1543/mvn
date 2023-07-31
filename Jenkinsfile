@@ -12,16 +12,16 @@ pipeline {
         stage('maven') {
             steps {
                 // Run Maven on a Unix agent.
-                bat "mvn -f javaapp/pom.xml clean package"
+                sh "/opt/apache-maven/bin/mvn -f javaapp/pom.xml clean package"
 
                 // To run Maven on a Windows agent, use
-                // bat "mvn -Dmaven.test.failure.ignore=true clean package"
+                // bat "/opt/apache-maven/bin/mvn -Dmaven.test.failure.ignore=true clean package"
             }
         }
         stage('tomcat') {
             steps {
                 // Run Maven on a Unix agent.
-                bat "mvn -f javaapp/pom.xml clean tomcat7:deploy"
+                bat "/opt/apache-maven/bin/mvn -f javaapp/pom.xml clean tomcat7:deploy"
             }
         }
         stage('docker') {
