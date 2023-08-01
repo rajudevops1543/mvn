@@ -1,11 +1,10 @@
 pipeline {
     agent any
 
-
     stages {
         stage('github') {
             steps {
-                // Get some code from a GitHub repository
+                // Get some code from a GitHub repository to Build
                 checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/rajudevops1543/mvn.git']])
             }
         }
