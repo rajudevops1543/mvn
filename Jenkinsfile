@@ -4,7 +4,6 @@ pipeline {
    environment {
         USER_CREDENTIALS = credentials('3c1dd8a3-7842-4136-bf01-7b719a140c05')
     }
-
     stages {
         stage('Run') {
             steps {
