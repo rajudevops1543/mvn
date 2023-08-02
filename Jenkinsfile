@@ -1,6 +1,18 @@
 pipeline {
     agent any
 
+   environment {
+        USER_CREDENTIALS = credentials('3c1dd8a3-7842-4136-bf01-7b719a140c05')
+    }
+
+    stages {
+        stage('Run') {
+            steps {
+                sh "echo $USER_CREDENTIALS_USR"
+                sh "echo $USER_CREDENTIALS_PSW"
+            }
+        }
+    }
     stages {
         stage('github') {
             steps {
@@ -33,3 +45,4 @@ pipeline {
 
     }
 }
+
