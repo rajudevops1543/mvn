@@ -17,12 +17,6 @@ pipeline {
                 // bat "/opt/apache-maven/bin/mvn -Dmaven.test.failure.ignore=true clean package"
             }
         }
-        stage('tomcat') {
-            steps {
-                // Run Maven on a Unix agent.
-                sh "/opt/apache-maven/bin/mvn -f javaapp/pom.xml clean tomcat7:deploy"
-            }
-        }
         stage('docker') {
             steps {
                 // Run Maven on a Unix agent.
