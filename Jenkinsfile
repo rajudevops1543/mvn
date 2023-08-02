@@ -28,10 +28,10 @@ pipeline {
         }
         stage('tomcat') {
             steps {
-                withCredentials([usernamePassword(credentialsId: 'USER_CREDENTIALS', usernameVariable: 'USER_CREDENTIALS_USR', passwordVariable: 'USER_CREDENTIALS_PSW')]) {
+                //withCredentials([usernamePassword(credentialsId: 'hash', usernameVariable: 'USER_CREDENTIALS_USR', passwordVariable: 'USER_CREDENTIALS_PSW')]) {
                     // Run Maven on a Unix agent.
-                    sh "/opt/apache-maven/bin/mvn -f javaapp/pom.xml clean tomcat7:deploy"
-                }
+                sh "/opt/apache-maven/bin/mvn -f javaapp/pom.xml clean tomcat7:deploy"
+                //}
             }
         }
         stage('docker') {
