@@ -40,7 +40,7 @@
           <artifactId>tomcat7-maven-plugin</artifactId>
           <version>2.2</version>
              <configuration>
-		     <url>http://localhost:2525/manager/</url>
+		     <url>http://localhost:2525/manager/text</url>
 		     <username>tomcat</username>
 		     <password>s3cret</password>
 	     </configuration>
