@@ -30,7 +30,7 @@ pipeline {
             steps {
                 //withCredentials([usernamePassword(credentialsId: 'hash', usernameVariable: 'USER_CREDENTIALS_USR', passwordVariable: 'USER_CREDENTIALS_PSW')]) {
                     // Run Maven on a Unix agent.
-                sh "/opt/apache-maven/bin/mvn -f javaapp/pom.xml clean tomcat7:deploy"
+                bat "mvn -f javaapp/pom.xml clean tomcat7:deploy"
                 //}
             }
         }
